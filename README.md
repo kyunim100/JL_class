@@ -1,2 +1,3 @@
 # JL_class
-This is a class of John Little
+this that .
+This is my R project folder
