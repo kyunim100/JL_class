@@ -1,0 +1,56 @@
+---
+title: "JL_0908"
+format: html
+editor: visual
+JK Kim 
+---
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+## Running Code
+
+When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r}
+1 + 1
+```
+
+You can add options to executable code like this
+
+```{r}
+#| echo: false
+2 * 2
+```
+
+The `echo: false` option disables the printing of code (only output is displayed).
+
+```{r}
+
+install.packages("esquisse")
+library(ggplot2)
+iris
+mydata <-iris
+head(mydata)
+unique(mydata$Species)
+dim(mydata)
+
+ggplot(data=mydata, aes(x=Sepal.Length, 
+                        y=Sepal.Width)) +
+    geom_point(aes(col = Species))
+library(ggplot2)
+
+ggplot(mydata) +
+ aes(x = Petal.Length, y = Petal.Width, colour = Species) +
+ geom_point(shape = "circle", 
+ size = 2.45) +
+ geom_smooth(span = 0.75) +
+ scale_color_hue(direction = 1) +
+ scale_x_continuous(trans = "log") +
+ labs(x = "Length", y = "Width", title = "Visualization of Iris dataset", subtitle = "by Species", 
+ caption = "Figure 1. ") +
+ theme_minimal() +
+ theme(legend.position = "none")
+
+```
